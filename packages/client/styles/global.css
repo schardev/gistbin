@@ -1,0 +1,53 @@
+@import "./editor.css";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .container {
+    @apply max-w-screen-2xl mx-auto;
+  }
+
+  .top-gradient {
+    --_color-1: hsl(185, 64%, 40%, 0.25);
+    --_color-2: hsl(277, 74%, 25%, 0.25);
+
+    @apply absolute inset-0 blur-md -z-10;
+    background-image: linear-gradient(to bottom, hsl(0, 0%, 0%, 0), var(--bg)),
+      linear-gradient(to right, var(--_color-1) 35%, var(--_color-2));
+  }
+}
+
+:root {
+  color-scheme: dark;
+
+  --accent: #2f81f7;
+  --bg: #0d1117;
+  --bg-muted: #161b22;
+
+  --primary-btn-bg: #238636;
+  --primary-btn-disabled-bg: rgba(35, 134, 54, 0.6);
+  --primary-btn-disabled-fg: rgba(255, 255, 255, 0.5);
+  --primary-btn-hover-bg: #2ea043;
+
+  --danger-bg: rgba(248, 81, 73, 0.1);
+  --danger-bg-muted: rgba(248, 81, 73, 0.4);
+  --danger-fg: #f85149;
+  --success-bg: rgba(46, 160, 67, 0.15);
+  --success-bg-muted: rgba(46, 160, 67, 0.4);
+  --success-fg: #3fb950;
+
+  --btn-bg: #21262d;
+  --btn-fg: #c9d1d9;
+  --btn-hover-border: var(--tooltip-bg);
+
+  --tooltip-bg: #6e7681;
+  --tooltip-fg: #ffffff;
+  --icon-hover-bg: rgba(177, 186, 196, 0.12);
+
+  --fg: #e6edf3;
+  --fg-muted: #848d97;
+
+  --border-focus: var(--accent);
+  --border-default: #30363d;
+}

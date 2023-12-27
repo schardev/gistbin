@@ -1,0 +1,226 @@
+@import "bytemd/dist/index.css";
+@import "github-markdown-css";
+
+.bytemd {
+  @apply h-[70vh] h-[70dvh] md:h-[500px] overflow-hidden border-default rounded-md;
+  @apply bg-background text-foreground-muted;
+  @apply grid grid-rows-[auto_1fr_auto];
+
+  /* toolbar */
+  &-toolbar {
+    @apply bg-background-muted text-foreground-muted border-b-default p-0;
+
+    &-tab {
+      @apply px-4 py-2 border-r border-transparent;
+
+      &-active {
+        @apply bg-background text-foreground border-x-default rounded-tr-md;
+      }
+
+      &:nth-child(2) {
+        @apply border-x rounded-tl-md;
+      }
+    }
+
+    &-left,
+    &-right {
+      @apply py-2;
+    }
+
+    &-left {
+      /* Only show heading menu on screens with mouse */
+      [bytemd-tippy-path="0"] {
+        @apply hover-none:hidden;
+      }
+    }
+
+    &-right {
+      [bytemd-tippy-path="0"],
+      [bytemd-tippy-path="2"],
+      [bytemd-tippy-path="5"] {
+        @apply hidden;
+      }
+    }
+
+    &-icon {
+      &:hover {
+        @apply bg-[--icon-hover-bg];
+      }
+    }
+  }
+
+  /* status bar */
+  &-status {
+    @apply bg-background-muted border-t-default;
+
+    &-left,
+    &-right {
+      @apply py-2;
+    }
+
+    /* disable scroll sync label */
+    &-right label {
+      @apply hidden;
+    }
+  }
+
+  /* dropdown item */
+  .tippy-box {
+    @apply p-2 bg-background-muted rounded-md overflow-hidden;
+    @apply border border-default text-foreground-muted;
+
+    .tippy-content {
+      @apply p-0;
+    }
+  }
+
+  &-dropdown {
+    @apply overflow-y-hidden;
+
+    &-item {
+      @apply rounded-md;
+
+      &:hover {
+        @apply bg-[--icon-hover-bg];
+      }
+
+      &-title {
+        @apply text-foreground;
+      }
+    }
+  }
+
+  /* main editor */
+  &-body {
+    @apply h-full relative;
+  }
+
+  &-editor {
+    @apply !w-full;
+  }
+
+  .CodeMirror {
+    @apply bg-background text-foreground;
+    /* @apply bg-[#222]; */
+
+    &-lines {
+      @apply !max-w-full;
+    }
+
+    &-cursor {
+      @apply border-l-white;
+    }
+
+    &-selected {
+      @apply bg-blue-500/35;
+    }
+  }
+
+  &-split &-preview {
+    @apply hidden;
+  }
+
+  &-preview .markdown-body {
+    @apply max-w-full;
+  }
+
+  &-sidebar {
+    @apply absolute right-0 bg-background-muted border-l-default;
+  }
+}
+
+/* tooltip titles */
+.tippy {
+  &-box {
+    @apply bg-[--tooltip-bg] text-[--tooltip-fg];
+  }
+
+  &-arrow {
+    @apply text-[--tooltip-bg];
+  }
+}
+
+/* inline highlighting  */
+.CodeMirror.cm-s-github {
+  --color-syntax-comment: #8b949e;
+  --color-syntax-constant: #79c0ff;
+  --color-syntax-entity-tag: #7ee787;
+  --color-syntax-entity: #d2a8ff;
+  --color-syntax-keyword: #ff7b72;
+  --color-syntax-markup-bold: #c9d1d9;
+  --color-syntax-markup-heading: #1f6feb;
+  --color-syntax-markup-ignored-bg: #1158c7;
+  --color-syntax-markup-list: #f2cc60;
+  --color-syntax-string-regexp: #7ee787;
+  --color-syntax-string: #a5d6ff;
+  --color-syntax-variable: #ffa657;
+
+  .cm-header {
+    @apply text-[--color-syntax-markup-heading];
+  }
+  .cm-attribute {
+    @apply text-[--color-syntax-entity];
+  }
+
+  .cm-string {
+    @apply text-[--color-syntax-string];
+  }
+
+  .cm-variable-2 {
+    @apply text-[--color-syntax-string];
+  }
+
+  .cm-variable-3 {
+    @apply text-[--color-syntax-entity-tag];
+  }
+
+  .cm-url {
+    @apply text-[--color-syntax-constant];
+  }
+
+  .cm-comment {
+    @apply text-[--color-syntax-variable];
+  }
+
+  .cm-quote {
+    @apply text-[--color-syntax-entity-tag];
+  }
+
+  .cm-tag {
+    @apply text-[--color-syntax-entity-tag];
+
+    &.cm-bracket {
+      @apply text-[--color-syntax-constant];
+    }
+  }
+
+  .cm-formatting-code-block {
+    @apply text-[--color-syntax-entity];
+  }
+
+  .cm-formatting-list {
+    @apply text-[--color-syntax-keyword];
+  }
+
+  .cm-formatting-link {
+    @apply text-[--color-syntax-string];
+  }
+
+  .cm-formatting-strong {
+    @apply text-[--color-syntax-keyword];
+  }
+}
+
+.markdown-body {
+  [data-rehype-pretty-code-figure] {
+    @apply m-0;
+  }
+
+  ol {
+    @apply list-decimal;
+  }
+
+  ul {
+    @apply list-disc;
+  }
+}

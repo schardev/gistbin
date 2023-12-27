@@ -1,0 +1,15 @@
+{
+  "name": "gistbin",
+  "version": "0.0.0",
+  "description": "gistbin",
+  "scripts": {
+    "format": "prettier --write .",
+    "lint": "prettier --check ."
+  },
+  "keywords": [],
+  "author": "Saurabh Charde <saurabhchardereal@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "prettier": "^3.1.1"
+  }
+}
