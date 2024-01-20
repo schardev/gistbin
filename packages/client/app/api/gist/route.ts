@@ -1,4 +1,4 @@
-import { EXPIRE, MAX_TEXT_LENGTH } from "@/lib/constants";
+import { MAX_TEXT_LENGTH } from "@/lib/constants";
 import { redis } from "@/lib/redis";
 import { getExpirationSeconds } from "@/lib/utils";
 import { nanoid } from "nanoid";
@@ -6,11 +6,9 @@ import { nanoid } from "nanoid";
 export const POST = async (req: Request) => {
   try {
     const formData = await req.formData();
-    const id = String(formData.get("id")) || nanoid(10);
-    const text = String(formData.get("text"));
-    const expiration = getExpirationSeconds(
-      String(formData.get("expiration")) || EXPIRE.ONE_WEEK,
-    );
+    const id = String(formData.get("id") || nanoid(10));
+    const text = String(formData.get("text") || "");
+    const expiration = getExpirationSeconds(String(formData.get("expiration")));
 
     if (!text) {
       return Response.json({ error: "Text cannot be empty" }, { status: 400 });
