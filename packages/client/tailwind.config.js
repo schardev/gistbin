@@ -10,6 +10,7 @@ const tailwindConfig = {
   theme: {
     extend: {
       colors: {
+        accent: "var(--accent)",
         background: "var(--bg)",
         "background-muted": "var(--bg-muted)",
         foreground: "var(--fg)",

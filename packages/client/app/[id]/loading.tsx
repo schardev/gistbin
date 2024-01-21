@@ -1,6 +1,6 @@
 const Loading = () => {
   return (
-    <div className="grid gap-y-4 place-content-center place-items-center min-h-screen">
+    <div className="grid gap-y-4 place-content-center place-items-center min-h-[70vh]">
       <svg
         width="1em"
         height="1em"
