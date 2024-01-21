@@ -144,7 +144,9 @@ const Form = () => {
       </div>
 
       {/* Editor */}
-      <Editor value={text} onChange={handleEditorTextChange} />
+      <div className="editor-wrapper">
+        <Editor value={text} onChange={handleEditorTextChange} />
+      </div>
 
       {/* Buttons */}
       <div className="flex justify-between flex-wrap gap-y-2">

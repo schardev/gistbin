@@ -1,8 +1,12 @@
 @import "bytemd/dist/index.css";
 @import "github-markdown-css";
 
+.editor-wrapper {
+  @apply [&>div]:min-h-[60vh];
+}
+
 .bytemd {
-  @apply h-[70vh] h-[70dvh] md:h-[500px] overflow-hidden border-default rounded-md;
+  @apply h-[60vh] md:h-[500px] overflow-hidden border-default rounded-md;
   @apply bg-background text-foreground-muted;
   @apply grid grid-rows-[auto_1fr_auto];
 

@@ -12,7 +12,6 @@ const Editor = ({
   onChange,
 }: Pick<EditorProps, "value" | "onChange">) => {
   return (
-    // TODO: set max length
     <ByteMDEditor
       mode="split"
       plugins={plugins}
