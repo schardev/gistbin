@@ -29,6 +29,7 @@ const ExpireDate = ({ ttl }: { ttl: number }) => {
     }, 1000);
 
     return () => clearInterval(intervalID);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

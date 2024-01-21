@@ -1,7 +1,7 @@
 const siteConfig = {
-  title: "Next Template",
-  description: "Next Template for the lazy ones out there",
-  url: "https://gistbin-app.vercel.app"
+  title: "Gistbin - A Github gist like pastebin",
+  description: "Gistbin is NOT the number one paste tool since 2002. Gistbin is a website where you can store markdown text online for a set period of time.",
+  url: "https://gistbin-app.vercel.app",
 };
 
 export default siteConfig;

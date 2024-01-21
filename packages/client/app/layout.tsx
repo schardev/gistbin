@@ -8,9 +8,9 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       { url: "/favicon.ico", sizes: "any" },
-      // { url: "/icon.svg", type: "image/svg+xml" },
+      { url: "/icon.svg", type: "image/svg+xml" },
     ],
-    // apple: "/apple-touch-icon.png",
+    apple: "/apple-touch-icon.png",
   },
   metadataBase: new URL(siteConfig.url),
   openGraph: {
@@ -22,7 +22,6 @@ export const metadata: Metadata = {
     description: siteConfig.description,
     siteName: siteConfig.title,
     url: siteConfig.url,
-    // images: [ <og image> ],
   },
 };
 
