@@ -4,7 +4,13 @@ import type { FormInputs } from "@/lib/types";
 import Link from "next/link";
 import { useState } from "react";
 import { useForm, type SubmitHandler } from "react-hook-form";
-import { EXPIRE, SITE_URL } from "@/lib/constants";
+import {
+  EXPIRE,
+  ID_MAX_LENGTH,
+  ID_MIN_LENGTH,
+  ID_SLUG_REGEX,
+  SITE_URL,
+} from "@/lib/constants";
 import { cn } from "@/lib/utils";
 import Button from "./button";
 import Dialog from "./dialog";
@@ -127,15 +133,15 @@ const Form = () => {
           )}
           {...register("id", {
             minLength: {
-              value: 3,
+              value: ID_MIN_LENGTH,
               message: "ID length cannot be less than 3 characters.",
             },
             maxLength: {
-              value: 80,
+              value: ID_MAX_LENGTH,
               message: "ID length cannot be more than 80 characters wide.",
             },
             pattern: {
-              value: /^[A-Za-z0-9]+(?:-[A-Za-z0-9]+)*$/,
+              value: ID_SLUG_REGEX,
               message:
                 "ID should start and end with an alphanumeric character.",
             },
