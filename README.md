@@ -1,5 +1,5 @@
 <div align="center">
-   <img src="./packages/client/public/icon.png" alt="Gistbin Logo">
+   <img src="./packages/client/public/icon.svg" alt="Gistbin Logo">
     <h1>Gistbin</h1>
     <p align="center">
         Gistbin is a <a href="https://gist.github.com">Github gist</a> like pastebin where you can store markdown text online for a set period of time.
