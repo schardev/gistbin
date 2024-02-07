@@ -11,7 +11,8 @@ import { nanoid } from "nanoid";
 export const POST = async (req: Request) => {
   try {
     const formData = await req.formData();
-    const id = String(formData.get("id") || "g-" + nanoid(10));
+    // nanoid could start with an underscore or hyphen, so prefix it
+    const id = String(formData.get("id") || "g" + nanoid(10)); 
     const text = String(formData.get("text") || "");
     const expiration = getExpirationSeconds(String(formData.get("expiration")));
 
